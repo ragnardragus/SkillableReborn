@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.ragnardragus.skillablereborn.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "progressivebosses.refmap.json",
+  "mixins": [
+    "RepairContainerMixin",
+    "BowItemMixin",
+    "CrossbowItemMixin"
+  ],
+  "client": [
+
+  ],
+  "minVersion": "0.8"
+}

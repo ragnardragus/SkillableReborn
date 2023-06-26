@@ -1,0 +1,9 @@
+{
+  "stage": "ENCHANTER",
+  "requirements": [
+    {
+      "attribute": "wisdom",
+      "level": 10
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "stage": "MUSICIAN",
+  "requirements": [
+    {
+      "attribute": "wisdom",
+      "level": 3
+    },
+    {
+      "attribute": "crafting",
+      "level": 3
+    },
+    {
+      "attribute": "wisdom",
+      "level": 3
+    }
+  ]
+}

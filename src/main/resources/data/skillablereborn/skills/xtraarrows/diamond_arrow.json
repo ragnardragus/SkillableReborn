@@ -1,0 +1,9 @@
+{
+  "is_bow_projectile": true,
+  "requirements": [
+    {
+      "attribute": "dexterity",
+      "level": 10
+    }
+  ]
+}

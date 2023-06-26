@@ -1,0 +1,12 @@
+{
+  "requirements": [
+    {
+      "attribute": "crafting",
+      "level": 6
+    },
+    {
+      "attribute": "cultivation",
+      "level": 9
+    }
+  ]
+}

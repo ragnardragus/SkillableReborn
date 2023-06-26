@@ -1,0 +1,51 @@
+{
+  "skillablereborn.screen.skills": "Skills",
+  "skillablereborn.screen.traits": "Traits",
+
+  "item.reskillablefork.skill_fragment": "Skill Fragment",
+  "strength": "Strength",
+  "survival": "Survival",
+  "combat": "Combat",
+  "tenacity": "Tenacity",
+  "crafting": "Crafting",
+  "cultivation": "Cultivation",
+  "dexterity": "Dexterity",
+  "wisdom": "Wisdom",
+
+  "container.skills": "Skills",
+  "container.traits": "Traits",
+  "overlay.message": "You can't use this item yet!",
+  "overlay.message.arrow": "You can't shot this arrow!",
+  "overlay.job_requirement":  "Job %s is required!",
+
+  "tooltip.requirements": "Requirements",
+  "tooltip.job": "Job",
+
+  "tooltip.trait_name.vein_mine": "Vein Mine",
+  "tooltip.trait_name.dash": "Dash",
+  "tooltip.trait_name.hi_jump": "Hi-Jump",
+  "tooltip.trait_name.step": "Step",
+  "tooltip.trait_name.reinforce": "Reinforce",
+  "tooltip.trait_name.brutal": "Brutal",
+  "tooltip.trait_name.fire_friendly": "Fire Friendly",
+  "tooltip.trait_name.steel_legs": "Steel Legs",
+  "tooltip.trait_name.plague_resistance": "Plague Doc.",
+  "tooltip.trait_name.ranger": "Ranger",
+  "tooltip.trait_name.resonance": "Resonance",
+  "tooltip.trait_name.emergency_supplies": "Ration",
+  "tooltip.trait_name.spike_shield": "Spike Shield",
+  "tooltip.trait_name.flora_affinity": "Floral",
+  "tooltip.trait_name.divine_hands": "Divine Hands",
+
+  "key.skills": "Open Skills",
+
+  "commands.add_skill.success": "A skill point added to %s",
+  "commands.add_stats.success": "Added a point of %s to %s",
+  "commands.add_level.success": "A level added to %s",
+  "commands.set_skill.success": "%d skill point(s) defined to %s",
+  "commands.set_stats.success": "%d points of %s defined to %s",
+  "commands.rem_skill.success": "A skill point removed from %s",
+  "commands.rem_stats.success": "Removed a point of %s from %s",
+  "commands.clear_level.success": "Removed all levels from %s",
+  "commands.reset.success": "Removed all levels, stats and skill points from %s"
+}

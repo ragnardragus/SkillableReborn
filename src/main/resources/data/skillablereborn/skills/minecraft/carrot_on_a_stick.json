@@ -1,0 +1,12 @@
+{
+  "requirements": [
+    {
+      "attribute": "dexterity",
+      "level": 5
+    },
+    {
+      "attribute": "strength",
+      "level": 3
+    }
+  ]
+}

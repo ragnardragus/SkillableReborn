@@ -1,0 +1,13 @@
+{
+  "stage": "BLACKSMITH",
+  "requirements": [
+    {
+      "attribute": "strength",
+      "level": 10
+    },
+    {
+      "attribute": "crafting",
+      "level": 8
+    }
+  ]
+}

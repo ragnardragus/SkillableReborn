@@ -1,0 +1,9 @@
+{
+  "stage": "BLACKSMITH",
+  "requirements": [
+    {
+      "attribute": "strength",
+      "level": 4
+    }
+  ]
+}
