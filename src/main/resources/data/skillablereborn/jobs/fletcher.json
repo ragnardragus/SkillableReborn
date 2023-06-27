@@ -1,0 +1,11 @@
+{
+  "villager_id": "",
+  "job": {
+    "desc": "job.desc.fletcher",
+    "multiply": 8,
+    "reward": {
+      "combat": 1,
+      "dexterity": 1
+    }
+  }
+}

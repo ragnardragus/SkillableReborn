@@ -3,6 +3,7 @@ package com.ragnardragus.skillablereborn.client.screen.widget;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.ragnardragus.skillablereborn.client.ClientUtil;
+import com.ragnardragus.skillablereborn.client.screen.JobScreen;
 import com.ragnardragus.skillablereborn.client.screen.SkillScreen;
 import com.ragnardragus.skillablereborn.client.screen.TraitScreen;
 import net.minecraft.client.Minecraft;
@@ -50,13 +51,17 @@ public class TabButton extends Button {
             case TRAITS:
                 minecraft.setScreen(new TraitScreen());
                 break;
+            case JOBS:
+                minecraft.setScreen(new JobScreen());
+                break;
         }
     }
 
     public enum TabType {
         INVENTORY (0),
         SKILLS (1),
-        TRAITS(2);
+        TRAITS(2),
+        JOBS(3);
 
         public final int iconIndex;
 

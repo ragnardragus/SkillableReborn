@@ -1,0 +1,11 @@
+{
+  "villager_id": "",
+  "job": {
+    "desc": "job.desc.butcher",
+    "multiply": 8,
+    "reward": {
+      "cultivation": 1,
+      "tenacity": 1
+    }
+  }
+}

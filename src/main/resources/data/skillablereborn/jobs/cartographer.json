@@ -1,0 +1,11 @@
+{
+  "villager_id": "",
+  "job": {
+    "desc": "job.desc.cartographer",
+    "multiply": 8,
+    "reward": {
+      "survival": 1,
+      "wisdom": 1
+    }
+  }
+}
