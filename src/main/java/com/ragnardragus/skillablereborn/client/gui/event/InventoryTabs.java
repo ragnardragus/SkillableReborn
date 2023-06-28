@@ -45,7 +45,7 @@ public class InventoryTabs {
             event.addListener(new TabButton(x, y, TabButton.TabType.INVENTORY, inventoryOpen, button -> {}));
             event.addListener(new TabButton(x + 28, y, TabButton.TabType.SKILLS, skillsOpen, button -> {}));
             event.addListener(new TabButton(x + 56, y, TabButton.TabType.TRAITS, traitsOpen, button -> {}));
-            //event.addListener(new TabButton(x + 84, y, TabButton.TabType.JOBS, jobsOpen, button -> {}));
+            event.addListener(new TabButton(x + 84, y, TabButton.TabType.JOBS, jobsOpen, button -> {}));
         }
     }
 }

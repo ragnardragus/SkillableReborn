@@ -1,15 +1,18 @@
 package com.ragnardragus.skillablereborn.client.screen;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.ragnardragus.skillablereborn.api.Jobs;
 import com.ragnardragus.skillablereborn.api.Trait;
 import com.ragnardragus.skillablereborn.client.ClientUtil;
 import com.ragnardragus.skillablereborn.client.screen.widget.TraitButton;
 import com.ragnardragus.skillablereborn.common.capabilities.attributes.Attribute;
+import com.ragnardragus.skillablereborn.common.capabilities.jobs.JobDataCapability;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.entity.player.Player;
 import org.lwjgl.glfw.GLFW;
 
 public class JobScreen extends Screen {
@@ -34,6 +37,17 @@ public class JobScreen extends Screen {
 
         renderBackground(stack);
         blit(stack, left, top, 0, 0, 176, 166);
+
+        Player player = minecraft.player;
+        player.getCapability(JobDataCapability.INSTANCE).ifPresent(jobData -> {
+            Jobs currentJob = Jobs.getJobByIndex(jobData.getCurrentJobIndex());
+            int currentJobProgress = jobData.getJobProgressAmount(currentJob);
+            int jobLevel = jobData.getJobLevel(currentJob);
+
+            font.drawShadow(stack, currentJob.displayName, width / 2 - font.width(currentJob.displayName), top + 17, ChatFormatting.GOLD.getColor());
+            font.draw(stack, "Level: " + jobLevel, width / 2 - font.width("Level: " + jobLevel), top + 28, ChatFormatting.DARK_GRAY.getColor());
+            font.draw(stack, "Progress: " + currentJobProgress, width / 2 - font.width("Progress: " + currentJobProgress), top + 39, ChatFormatting.DARK_GRAY.getColor());
+        });
 
         font.draw(stack, title, width / 2 - font.width(title.getString()) / 2, top + 6, 0x3F3F3F);
 
