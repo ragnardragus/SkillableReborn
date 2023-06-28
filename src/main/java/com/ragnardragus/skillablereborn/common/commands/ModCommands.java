@@ -8,7 +8,7 @@ import com.ragnardragus.skillablereborn.common.capabilities.attributes.Attribute
 import com.ragnardragus.skillablereborn.common.capabilities.attributes.IAttribute;
 import com.ragnardragus.skillablereborn.common.capabilities.level.LevelCapability;
 import com.ragnardragus.skillablereborn.common.network.PacketHandler;
-import com.ragnardragus.skillablereborn.common.network.attributes.AttributesSync;
+import com.ragnardragus.skillablereborn.common.network.attributes.StatsRefreshMsg;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -137,7 +137,7 @@ public class ModCommands {
                 IAttribute attribute = Attribute.get(player);
                 attribute.increaseAttributeLevel(stats);
 
-                PacketHandler.sendToPlayer(new AttributesSync(attribute.serializeNBT()), player);
+                PacketHandler.sendToPlayer(new StatsRefreshMsg(attribute.serializeNBT()), player);
                 source.sendSuccess(new TranslatableComponent("commands.add_stats.success", new TranslatableComponent(stats.displayName), player.getName()), true);
             }
         });
@@ -152,7 +152,7 @@ public class ModCommands {
                 IAttribute attribute = Attribute.get(player);
                 attribute.setAttributeLevel(stats, amount);
 
-                PacketHandler.sendToPlayer(new AttributesSync(attribute.serializeNBT()), player);
+                PacketHandler.sendToPlayer(new StatsRefreshMsg(attribute.serializeNBT()), player);
                 source.sendSuccess(new TranslatableComponent("commands.set_stats.success", amount, new TranslatableComponent(stats.displayName), player.getName()), true);
             }
         });
@@ -167,7 +167,7 @@ public class ModCommands {
                 IAttribute attribute = Attribute.get(player);
                 attribute.decreaseAttributeLevel(stats);
 
-                PacketHandler.sendToPlayer(new AttributesSync(attribute.serializeNBT()), player);
+                PacketHandler.sendToPlayer(new StatsRefreshMsg(attribute.serializeNBT()), player);
                 source.sendSuccess(new TranslatableComponent("commands.rem_stats.success", new TranslatableComponent(stats.displayName), player.getName()), true);
             }
         });
@@ -219,7 +219,7 @@ public class ModCommands {
                     IAttribute attribute = Attribute.get(player);
                     attribute.setAttributeLevel(stat, 1);
 
-                    PacketHandler.sendToPlayer(new AttributesSync(attribute.serializeNBT()), player);
+                    PacketHandler.sendToPlayer(new StatsRefreshMsg(attribute.serializeNBT()), player);
                 }
 
                 skillPoint.sync(player);

@@ -4,7 +4,6 @@ import com.ragnardragus.skillablereborn.common.event.requiremets.RequirementHelp
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -17,10 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class CrossbowItemMixin {
 
     @Inject(method = {"use"}, at = {@At("HEAD")}, cancellable = true)
-    public void test(Level level, Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> ci) {
+    public void onUseCrossbow(Level level, Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> ci) {
         ItemStack itemstack = player.getItemInHand(hand);
-        System.out.println(player.getProjectile(itemstack).getItem().getRegistryName());
-
         ItemStack arrow = player.getProjectile(itemstack);
 
         if(arrow != null && !arrow.isEmpty()) {

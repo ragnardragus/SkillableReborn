@@ -27,7 +27,7 @@ public class JobScreen extends Screen {
 
     @Override
     public void render(PoseStack stack, int mouseX, int mouseY, float partialTicks) {
-        ClientUtil.bindTraitsTexture();
+        ClientUtil.bindJobsTexture();
 
         int left = (width - 176) / 2;
         int top = (height - 166) / 2;

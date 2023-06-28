@@ -1,20 +1,16 @@
 package com.ragnardragus.skillablereborn;
 
-import com.ragnardragus.skillablereborn.common.capabilities.attributes.Attribute;
+
 import com.ragnardragus.skillablereborn.common.capabilities.attributes.AttributeProvider;
-import com.ragnardragus.skillablereborn.common.capabilities.level.Level;
-import com.ragnardragus.skillablereborn.common.capabilities.level.LevelCapability;
+import com.ragnardragus.skillablereborn.common.capabilities.jobs.JobDataProvider;
 import com.ragnardragus.skillablereborn.common.capabilities.level.LevelProvider;
 import com.ragnardragus.skillablereborn.common.commands.ModCommands;
 import com.ragnardragus.skillablereborn.common.compat.CuriosCompat;
 import com.ragnardragus.skillablereborn.common.network.PacketHandler;
 import com.ragnardragus.skillablereborn.common.registries.OverlayRegistry;
 import com.ragnardragus.skillablereborn.serialization.RequirementsJsonListener;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.ShulkerBullet;
-import net.minecraft.world.item.BowItem;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -74,6 +70,7 @@ public class SkillableReborn {
 
             event.addCapability(AttributeProvider.IDENTIFIER, new AttributeProvider());
             event.addCapability(LevelProvider.IDENTIFIER, new LevelProvider());
+            event.addCapability(JobDataProvider.IDENTIFIER, new JobDataProvider());
         }
     }
 }

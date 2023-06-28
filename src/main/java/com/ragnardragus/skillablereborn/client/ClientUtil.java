@@ -28,6 +28,8 @@ public class ClientUtil {
     public static final ResourceLocation SKILLS_RESOURCE = new ResourceLocation(SkillableReborn.MOD_ID, "textures/gui/skills.png");
     public static final ResourceLocation TRAITS_RESOURCE = new ResourceLocation(SkillableReborn.MOD_ID, "textures/gui/traits.png");
 
+    public static final ResourceLocation JOBS_RESOURCE = new ResourceLocation(SkillableReborn.MOD_ID, "textures/gui/jobs.png");
+
     public static void bind(ResourceLocation texture) {
          bind(texture, true);
     }
@@ -38,6 +40,10 @@ public class ClientUtil {
 
     public static void bindTraitsTexture() {
         bind(TRAITS_RESOURCE);
+    }
+
+    public static void bindJobsTexture() {
+        bind(JOBS_RESOURCE);
     }
 
     public static void bind(ResourceLocation texture, boolean setShader) {

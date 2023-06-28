@@ -7,30 +7,30 @@ import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
 
-public class AttributesSync {
+public class StatsRefreshMsg {
 
 
     private final CompoundTag skillModel;
 
-    public AttributesSync(CompoundTag skillModel) {
+    public StatsRefreshMsg(CompoundTag skillModel) {
         this.skillModel = skillModel;
     }
 
-    public AttributesSync(FriendlyByteBuf buffer) {
+    public StatsRefreshMsg(FriendlyByteBuf buffer) {
         this.skillModel = buffer.readNbt();
     }
 
-    public static AttributesSync decode(FriendlyByteBuf buffer) {
+    public static StatsRefreshMsg decode(FriendlyByteBuf buffer) {
         CompoundTag tag = buffer.readNbt();
-        return new AttributesSync(tag);
+        return new StatsRefreshMsg(tag);
     }
 
-    public static void encode(AttributesSync msg, FriendlyByteBuf buffer) {
+    public static void encode(StatsRefreshMsg msg, FriendlyByteBuf buffer) {
         buffer.writeNbt(msg.skillModel);
     }
 
     public static class Handler {
-        public static void handle(final AttributesSync msg, Supplier<NetworkEvent.Context> ctx) {
+        public static void handle(final StatsRefreshMsg msg, Supplier<NetworkEvent.Context> ctx) {
             ctx.get().enqueueWork(() -> Attribute.get().deserializeNBT(msg.skillModel));
             ctx.get().setPacketHandled(true);
         }

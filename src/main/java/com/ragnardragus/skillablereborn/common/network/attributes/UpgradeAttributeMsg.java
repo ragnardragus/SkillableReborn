@@ -42,7 +42,7 @@ public class UpgradeAttributeMsg {
                         attribute.increaseAttributeLevel(stats);
                         playerLevel.subtractSkillPoints();
 
-                        PacketHandler.sendToPlayer(new AttributesSync(Attribute.get(player).serializeNBT()), player);
+                        PacketHandler.sendToPlayer(new StatsRefreshMsg(Attribute.get(player).serializeNBT()), player);
                         playerLevel.sync(player);
                     }
                 });

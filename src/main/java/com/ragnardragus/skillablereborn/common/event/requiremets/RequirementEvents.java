@@ -25,20 +25,6 @@ public class RequirementEvents {
         ItemStack item = event.getItemStack();
         Block block = event.getWorld().getBlockState(event.getPos()).getBlock();
 
-        /*
-        player.getCapability(TraitCapability.TRAIT).ifPresent(trait -> {
-            System.out.println("step: " + trait.hasStepSkill());
-            trait.setStepSkill(true);
-            System.out.println("dash: " + trait.hasDashSkill());
-            trait.setDashSkill(true);
-            System.out.println("hi jump: " + trait.hasHiJumpSkill());
-            trait.setHiJumpSkill(true);
-            if(player instanceof ServerPlayerEntity) {
-                trait.sync((ServerPlayerEntity) player);
-            }
-        });
-        */
-
         if(GameStageCompat.isLoaded()) {
             if (!player.isCreative() && (!GameStageCompat.canUseItem(player, item) || !GameStageCompat.canUseBlock(player, block))) {
                 event.setCanceled(true);

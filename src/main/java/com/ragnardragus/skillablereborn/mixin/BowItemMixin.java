@@ -16,10 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class BowItemMixin {
 
     @Inject(method = {"use"}, at = {@At("HEAD")}, cancellable = true)
-    public void test(Level level, Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> ci) {
+    public void onUseBow(Level level, Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> ci) {
         ItemStack itemstack = player.getItemInHand(hand);
-        System.out.println(player.getProjectile(itemstack).getItem().getRegistryName());
-
         ItemStack arrow = player.getProjectile(itemstack);
 
         if(arrow != null && !arrow.isEmpty()) {
