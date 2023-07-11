@@ -1,9 +1,8 @@
 {
   "skillablereborn.screen.skills": "Skills",
   "skillablereborn.screen.traits": "Traits",
-  "skillablereborn.screen.jobs": "Jobs",
+  "skillablereborn.screen.jobs": "Current Job",
 
-  "item.reskillablefork.skill_fragment": "Skill Fragment",
   "strength": "Strength",
   "survival": "Survival",
   "combat": "Combat",
@@ -48,5 +47,31 @@
   "commands.rem_skill.success": "A skill point removed from %s",
   "commands.rem_stats.success": "Removed a point of %s from %s",
   "commands.clear_level.success": "Removed all levels from %s",
-  "commands.reset.success": "Removed all levels, stats and skill points from %s"
+  "commands.reset.success": "Removed all levels, stats and skill points from %s",
+
+  "job.objective.mason": "Chop %d wood logs.",
+
+
+  "skillablereborn.job.none": "None",
+  "skillablereborn.job.armorer": "Armorer",
+  "skillablereborn.job.butcher": "Butcher",
+  "skillablereborn.job.cartographer": "Cartographer",
+  "skillablereborn.job.cleric": "Cleric",
+  "skillablereborn.job.farmer": "Farmer",
+  "skillablereborn.job.fisherman": "Fisheman",
+  "skillablereborn.job.fletcher": "Fletcher",
+  "skillablereborn.job.leatherworker": "Leadworker",
+  "skillablereborn.job.librarian": "Librarian",
+  "skillablereborn.job.mason": "Mason",
+  "skillablereborn.job.shepherd": "Shepherd",
+  "skillablereborn.job.toolsmith": "Toolsmith",
+  "skillablereborn.job.weaponsmith": "Weaponsmith",
+
+  "skillablereborn.job.level_0": "No job assigned",
+  "skillablereborn.job.level_1": "Novice",
+  "skillablereborn.job.level_2": "Apprentice",
+  "skillablereborn.job.level_3": "Journeyman",
+  "skillablereborn.job.level_4": "Expert",
+  "skillablereborn.job.level_5": "Master",
+  "skillablereborn.job.level_6": "Finished all jobs"
 }

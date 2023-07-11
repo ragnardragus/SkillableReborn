@@ -2,6 +2,7 @@ package com.ragnardragus.skillablereborn.client.screen.widget;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.ragnardragus.skillablereborn.api.Jobs;
+import com.ragnardragus.skillablereborn.api.Quest;
 import com.ragnardragus.skillablereborn.client.ClientUtil;
 import com.ragnardragus.skillablereborn.common.capabilities.jobs.JobDataCapability;
 import com.ragnardragus.skillablereborn.common.network.PacketHandler;
@@ -37,10 +38,12 @@ public class RequestJobButton extends Button {
 
         ClientUtil.bind(ClientUtil.JOBS_RESOURCE);
 
-        if(!(lastMerchantJob == currentJob)) {
-            blit(stack, x, y, 0 + (isMouseOver(mouseX, mouseY) ? 28 : 0), 184, width, height);
-        } else {
-            blit(stack, x, y, 0 + (isMouseOver(mouseX, mouseY) ? 28 : 0), 166, width, height);
+        if(Quest.QUESTS.containsKey(lastMerchantJob)) {
+            if(!(lastMerchantJob == currentJob)) {
+                blit(stack, x, y, 0 + (isMouseOver(mouseX, mouseY) ? 28 : 0), 184, width, height);
+            } else {
+                blit(stack, x, y, 0 + (isMouseOver(mouseX, mouseY) ? 28 : 0), 166, width, height);
+            }
         }
     }
 

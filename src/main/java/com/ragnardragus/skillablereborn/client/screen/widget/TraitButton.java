@@ -32,30 +32,6 @@ public class TraitButton extends Button {
         blit(stack, x + 2, y + 2, haveTrait ? trait.imgXPos : trait.imgXPos + 20 , trait.imgYPos, 20, 20);
 
         if(isMouseOver(mouseX, mouseY)) {
-            /*
-            List<Component> componentList = new ArrayList<>();
-
-            Component name = new TranslatableComponent("tooltip.trait_name." + trait.displayName);
-            componentList.add(name);
-
-            Component description =  new TranslatableComponent("tooltip.trait_desc." + trait.displayName).withStyle(ChatFormatting.DARK_GRAY);
-            componentList.add(description);
-
-            componentList.add(new TextComponent(" "));
-            componentList.add(new TextComponent("Requirements: ").withStyle(ChatFormatting.GRAY));
-
-            for (int i = 0; i < trait.requirements.length; i++) {
-                boolean met = Attribute.get().getAttributeLevel(trait.requirements[i].stats) >= trait.requirements[i].level;
-
-                Component reqName = new TranslatableComponent(trait.requirements[i].stats.displayName).append(": ");
-                Component level = new TextComponent(String.valueOf(trait.requirements[i].level)).withStyle(met ? ChatFormatting.GREEN : ChatFormatting.RED);
-                Component requirementMsg = new TextComponent(reqName.getString()).append(level);
-
-                componentList.add(requirementMsg);
-            }
-
-             */
-
             this.traitScreen.setTraitByButton(trait);
         }
     }

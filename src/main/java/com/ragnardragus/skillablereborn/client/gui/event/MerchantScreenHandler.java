@@ -1,6 +1,7 @@
 package com.ragnardragus.skillablereborn.client.gui.event;
 
 import com.ragnardragus.skillablereborn.SkillableReborn;
+import com.ragnardragus.skillablereborn.api.Quest;
 import com.ragnardragus.skillablereborn.client.screen.JobScreen;
 import com.ragnardragus.skillablereborn.client.screen.SkillScreen;
 import com.ragnardragus.skillablereborn.client.screen.TraitScreen;

@@ -4,15 +4,11 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.ragnardragus.skillablereborn.api.Jobs;
 import com.ragnardragus.skillablereborn.api.Trait;
 import com.ragnardragus.skillablereborn.client.ClientUtil;
-import com.ragnardragus.skillablereborn.client.screen.widget.TraitButton;
-import com.ragnardragus.skillablereborn.common.capabilities.attributes.Attribute;
-import com.ragnardragus.skillablereborn.common.capabilities.jobs.JobDataCapability;
-import net.minecraft.ChatFormatting;
+import com.ragnardragus.skillablereborn.client.screen.widget.BadgeWidget;
+import com.ragnardragus.skillablereborn.client.screen.widget.JobWidget;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.world.entity.player.Player;
 import org.lwjgl.glfw.GLFW;
 
 public class JobScreen extends Screen {
@@ -21,35 +17,37 @@ public class JobScreen extends Screen {
         super(new TranslatableComponent("skillablereborn.screen.jobs"));
     }
 
+    private int top;
+    private int left;
+
     @Override
     protected void init() {
+        this.left = (width - 176) / 2;
+        this.top = (height - 166) / 2;
 
-        int left = (width - 176) / 2;
-        int top = (height - 166) / 2;
+        addRenderableWidget(new JobWidget(left + 16, top + 28));
+
+        Jobs[] jobs = Jobs.values();
+
+        for(int i = 1; i < jobs.length; i++) {
+            if(jobs[i] != Jobs.NONE) {
+                int x = (left + 12) + (i-1) % 6 * 26; // -2px
+                int y = (top + 104) + (i-1) / 6 * 32; // -2px
+
+                addRenderableWidget(new BadgeWidget(left, top, x, y, jobs[i]));
+            }
+        }
     }
 
     @Override
     public void render(PoseStack stack, int mouseX, int mouseY, float partialTicks) {
         ClientUtil.bindJobsTexture();
 
-        int left = (width - 176) / 2;
-        int top = (height - 166) / 2;
-
         renderBackground(stack);
         blit(stack, left, top, 0, 0, 176, 166);
 
-        Player player = minecraft.player;
-        player.getCapability(JobDataCapability.INSTANCE).ifPresent(jobData -> {
-            Jobs currentJob = Jobs.getJobByIndex(jobData.getCurrentJobIndex());
-            int currentJobProgress = jobData.getJobProgressAmount(currentJob);
-            int jobLevel = jobData.getJobLevel(currentJob);
-
-            font.drawShadow(stack, currentJob.displayName, width / 2 - font.width(currentJob.displayName), top + 17, ChatFormatting.GOLD.getColor());
-            font.draw(stack, "Level: " + jobLevel, width / 2 - font.width("Level: " + jobLevel), top + 28, ChatFormatting.DARK_GRAY.getColor());
-            font.draw(stack, "Progress: " + currentJobProgress, width / 2 - font.width("Progress: " + currentJobProgress), top + 39, ChatFormatting.DARK_GRAY.getColor());
-        });
-
         font.draw(stack, title, width / 2 - font.width(title.getString()) / 2, top + 6, 0x3F3F3F);
+        font.draw(stack, new TextComponent("Classification"), width / 2 - font.width(new TextComponent("Classification")) / 2, top + 82, 0x3F3F3F);
 
         super.render(stack, mouseX, mouseY, partialTicks);
     }
