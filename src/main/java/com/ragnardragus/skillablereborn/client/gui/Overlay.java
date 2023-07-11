@@ -61,7 +61,7 @@ public class Overlay extends GuiComponent {
                         int u = Math.min(requirement.level, maxLevel - 1) / (maxLevel / 4) * 16 + 176;
                         int v = requirement.stats.index * 16 + 128;
 
-                        ClientUtil.bind(ClientUtil.SKILLS_RESOURCE);
+                        ClientUtil.bindSkillsTexture();
                         gui.blit(poseStack, x, y, u, v, 16, 16);
 
                         String level = Integer.toString(requirement.level);
@@ -74,8 +74,8 @@ public class Overlay extends GuiComponent {
 
             if(stagesRequirement != null) {
                 boolean hasStage = GameStageHelper.hasStage(Minecraft.getInstance().player, stagesRequirement);
-                String jobMessage = I18n.get("overlay.job_requirement", stagesRequirement);
-                mc.font.drawShadow(poseStack, new TextComponent(jobMessage), cx - mc.font.width(jobMessage) / 2f, cy + (requirements.isEmpty() ? 24 : 34), hasStage ? 0x55FF55 : 0xFF5555);
+                String stageMessage = I18n.get("overlay.stage_requirement", stagesRequirement);
+                mc.font.drawShadow(poseStack, new TextComponent(stageMessage), cx - mc.font.width(stageMessage) / 2f, cy + (requirements.isEmpty() ? 24 : 34), hasStage ? 0x55FF55 : 0xFF5555);
             }
         }
     }

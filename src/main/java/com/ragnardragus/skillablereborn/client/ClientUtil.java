@@ -7,7 +7,6 @@ import com.ragnardragus.skillablereborn.client.screen.SkillScreen;
 import com.ragnardragus.skillablereborn.client.screen.TraitScreen;
 import com.ragnardragus.skillablereborn.client.screen.widget.LevelUpButton;
 import com.ragnardragus.skillablereborn.client.screen.widget.TraitButton;
-import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.screens.Screen;
@@ -32,8 +31,6 @@ public class ClientUtil {
     public static final ResourceLocation SKILLS_RESOURCE = new ResourceLocation(SkillableReborn.MOD_ID, "textures/gui/skills.png");
     public static final ResourceLocation TRAITS_RESOURCE = new ResourceLocation(SkillableReborn.MOD_ID, "textures/gui/traits.png");
 
-    public static final ResourceLocation JOBS_RESOURCE = new ResourceLocation(SkillableReborn.MOD_ID, "textures/gui/jobs.png");
-
     public static void bind(ResourceLocation texture) {
          bind(texture, true);
     }
@@ -44,10 +41,6 @@ public class ClientUtil {
 
     public static void bindTraitsTexture() {
         bind(TRAITS_RESOURCE);
-    }
-
-    public static void bindJobsTexture() {
-        bind(JOBS_RESOURCE);
     }
 
     public static void bind(ResourceLocation texture, boolean setShader) {

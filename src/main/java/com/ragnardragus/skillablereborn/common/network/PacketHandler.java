@@ -4,9 +4,6 @@ import com.ragnardragus.skillablereborn.SkillableReborn;
 import com.ragnardragus.skillablereborn.common.network.attributes.StatsRefreshMsg;
 import com.ragnardragus.skillablereborn.common.network.attributes.UpgradeAttributeMsg;
 import com.ragnardragus.skillablereborn.common.network.attributes.WarningMsg;
-import com.ragnardragus.skillablereborn.common.network.job.AssignCurrentJob;
-import com.ragnardragus.skillablereborn.common.network.job.JobRefreshMsg;
-import com.ragnardragus.skillablereborn.common.network.job.UpdateLastMerchantJob;
 import com.ragnardragus.skillablereborn.common.network.level.LevelUpMsg;
 import com.ragnardragus.skillablereborn.common.network.level.LevelsMsg;
 import com.ragnardragus.skillablereborn.common.network.level.McLevelsNeedMsg;
@@ -81,24 +78,6 @@ public class PacketHandler {
                 .decoder(McLevelsNeedMsg::decode)
                 .encoder(McLevelsNeedMsg::encode)
                 .consumer(McLevelsNeedMsg.Handler::handle)
-                .add();
-
-        net.messageBuilder(UpdateLastMerchantJob.class, id(), NetworkDirection.PLAY_TO_CLIENT)
-                .decoder(UpdateLastMerchantJob::decode)
-                .encoder(UpdateLastMerchantJob::encode)
-                .consumer(UpdateLastMerchantJob.Handler::handle)
-                .add();
-
-        net.messageBuilder(AssignCurrentJob.class, id(), NetworkDirection.PLAY_TO_SERVER)
-                .decoder(AssignCurrentJob::decode)
-                .encoder(AssignCurrentJob::encode)
-                .consumer(AssignCurrentJob.Handler::handle)
-                .add();
-
-        net.messageBuilder(JobRefreshMsg.class, id(), NetworkDirection.PLAY_TO_CLIENT)
-                .decoder(JobRefreshMsg::decode)
-                .encoder(JobRefreshMsg::encode)
-                .consumer(JobRefreshMsg.Handler::handle)
                 .add();
     }
 

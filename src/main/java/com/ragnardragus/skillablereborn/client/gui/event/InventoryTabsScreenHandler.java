@@ -1,7 +1,6 @@
 package com.ragnardragus.skillablereborn.client.gui.event;
 
 import com.ragnardragus.skillablereborn.SkillableReborn;
-import com.ragnardragus.skillablereborn.client.screen.JobScreen;
 import com.ragnardragus.skillablereborn.client.screen.SkillScreen;
 import com.ragnardragus.skillablereborn.client.screen.TraitScreen;
 import com.ragnardragus.skillablereborn.client.screen.widget.TabButton;
@@ -19,12 +18,10 @@ public class InventoryTabsScreenHandler {
     public static void onInitGui(ScreenEvent.InitScreenEvent.Post event) {
         Screen screen = event.getScreen();
 
-        if (screen instanceof InventoryScreen || screen instanceof SkillScreen
-                || screen instanceof TraitScreen || screen instanceof JobScreen) {
+        if (screen instanceof InventoryScreen || screen instanceof SkillScreen || screen instanceof TraitScreen) {
             boolean inventoryOpen = screen instanceof InventoryScreen;
             boolean skillsOpen = screen instanceof SkillScreen;
             boolean traitsOpen = screen instanceof TraitScreen;
-            boolean jobsOpen = screen instanceof JobScreen;
 
             int x = (screen.width  / 2) - 86;
             int y = (screen.height / 2) - 110;
@@ -33,7 +30,6 @@ public class InventoryTabsScreenHandler {
             event.addListener(new TabButton(x, y, TabButton.TabType.INVENTORY, inventoryOpen, button -> {}));
             event.addListener(new TabButton(x + 28, y, TabButton.TabType.SKILLS, skillsOpen, button -> {}));
             event.addListener(new TabButton(x + 56, y, TabButton.TabType.TRAITS, traitsOpen, button -> {}));
-            event.addListener(new TabButton(x + 84, y, TabButton.TabType.JOBS, jobsOpen, button -> {}));
         }
     }
 }

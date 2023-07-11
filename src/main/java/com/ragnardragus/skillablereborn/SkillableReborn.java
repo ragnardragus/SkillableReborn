@@ -2,7 +2,6 @@ package com.ragnardragus.skillablereborn;
 
 
 import com.ragnardragus.skillablereborn.common.capabilities.attributes.AttributeProvider;
-import com.ragnardragus.skillablereborn.common.capabilities.jobs.JobDataProvider;
 import com.ragnardragus.skillablereborn.common.capabilities.level.LevelProvider;
 import com.ragnardragus.skillablereborn.common.commands.ModCommands;
 import com.ragnardragus.skillablereborn.common.compat.CuriosCompat;
@@ -70,7 +69,6 @@ public class SkillableReborn {
 
             event.addCapability(AttributeProvider.IDENTIFIER, new AttributeProvider());
             event.addCapability(LevelProvider.IDENTIFIER, new LevelProvider());
-            event.addCapability(JobDataProvider.IDENTIFIER, new JobDataProvider());
         }
     }
 }
