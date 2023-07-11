@@ -35,7 +35,7 @@ public class SkillScreen extends Screen {
 
     @Override
     public void render(PoseStack stack, int mouseX, int mouseY, float partialTicks) {
-        ClientUtil.bind(ClientUtil.SKILLS_RESOURCE);
+        ClientUtil.bindSkillsTexture();
 
         int left = (width - 176) / 2;
         int top = (height - 166) / 2;

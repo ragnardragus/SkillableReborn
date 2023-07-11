@@ -28,7 +28,7 @@ public class SkillButton extends Button {
     public void render(PoseStack stack, int mouseX, int mouseY, float partialTicks) {
 
         Minecraft minecraft = Minecraft.getInstance();
-        ClientUtil.bind(ClientUtil.SKILLS_RESOURCE);
+        ClientUtil.bindSkillsTexture();
 
         Player player = minecraft.player;
 

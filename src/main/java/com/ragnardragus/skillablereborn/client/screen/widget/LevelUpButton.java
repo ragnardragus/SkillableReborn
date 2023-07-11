@@ -28,7 +28,7 @@ public class LevelUpButton extends Button {
     @Override
     public void render(PoseStack poseStack, int mouseX, int mouseY, float partialTicks) {
         Minecraft minecraft = Minecraft.getInstance();
-        ClientUtil.bind(ClientUtil.SKILLS_RESOURCE);
+        ClientUtil.bindSkillsTexture();
 
         blit(poseStack, x, y, 145, canLevelUp ? 240 : 226, 14, 14);
 
